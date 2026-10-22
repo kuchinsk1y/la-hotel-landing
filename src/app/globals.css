@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+/* Design tokens (from Figma) */
+@theme {
+  --color-ink: #1c211a;
+  --color-navy: #2c4255;
+  --color-cream: #f7f7ee;
+  --color-sand: #e3e3c4;
+  --color-night: #17232d;
+  --color-steel: #6f8ca5;
+  --color-mist: #d8dde1;
+  --color-forest: #5a6647;
+  --color-forest-deep: #434b33;
+  --color-olive: #b1b187;
+
+  --font-display: var(--font-display-var), "Times New Roman", serif;
+  --font-sans: var(--font-body-var), Georgia, serif;
+
+  --breakpoint-3xl: 120rem;
+}
+
+@layer base {
+  body {
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+}
+
+/* 1 design px of the 1920px artboard, scaled down: layout stops growing at 1280px to stay compact */
+:root {
+  --u: calc(min(100vw, 1280px) / 1920);
+}
+
+@utility text-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, calc(66 * var(--u)), 4.125rem);
+  line-height: 1.09;
+}
+
+@utility text-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, calc(52 * var(--u)), 3.25rem);
+  line-height: 1.1;
+}
+
+@utility text-h4 {
+  font-family: var(--font-display);
+  font-size: clamp(1.625rem, calc(46 * var(--u)), 2.875rem);
+  line-height: 1.1;
+}
+
+@utility text-lead {
+  font-size: clamp(1.125rem, calc(28 * var(--u)), 1.75rem);
+  line-height: 1.32;
+}
+
+@utility text-body {
+  font-size: clamp(1rem, calc(20 * var(--u)), 1.25rem);
+  line-height: 1.3;
+}
+
+/* Section silhouette with a wavy top edge and a flat bottom */
+@utility mask-wave-top {
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+@utility rounded-card {
+  border-radius: clamp(1.5rem, calc(50 * var(--u)), 3.125rem);
+}
