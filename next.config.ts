@@ -1,4 +1,4 @@
-﻿import type { NextConfig } from "next";
+import type { NextConfig } from "next";
 
 // GitHub Pages serves the site from /<repo>, so the build needs a base path and a static export.
 const isPages = process.env.GITHUB_PAGES === "true";
